@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.0.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+version = '1.0.0'
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	springVersion = '5.2.6.RELEASE'
+}
+
+dependencies {
+	implementation 'ch.qos.logback:logback-classic:1.2.10'
+	implementation 'com.github.jknack:handlebars:4.3.1'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+	testImplementation 'org.assertj:assertj-core:3.23.1'
+}
+
+test {
+	useJUnitPlatform()
+}
